@@ -14,7 +14,6 @@ import pandas as pd
 # Initialize the Dash app
 app = Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP], title="Foresight")
 server = app.server
-
 dataset_path = "Stock_Market_Dataset.csv"
 
 # Define the layout of the app
@@ -62,9 +61,9 @@ app.layout = dbc.Container([
         id='interval-component',
         interval=300000,  # Update every 5 minutes
         n_intervals=0
-    )
-])
- dbc.Row(dbc.Col(html.Div([
+    ),
+    
+    dbc.Row(dbc.Col(html.Div([
         html.Hr(),
         html.P([
             "© 2024 Foresight | Developed by ",
@@ -141,9 +140,6 @@ def update_graph(selected_stock, start_date, end_date, n_intervals):
         df['Signal'] = 0
         df.loc[df.index[short_window:], 'Signal'] = np.where(df['Short_MA'][short_window:] > df['Long_MA'][short_window:], 1, 0)
         df['Position'] = df['Signal'].diff()
-        
-        # Debugging outputs
-        #print(df[['Close', 'Short_MA', 'Long_MA', 'Signal', 'Position']].tail(10))
 
     fig = go.Figure()
 
