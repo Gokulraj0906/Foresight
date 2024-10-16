@@ -64,6 +64,15 @@ app.layout = dbc.Container([
         n_intervals=0
     )
 ])
+ dbc.Row(dbc.Col(html.Div([
+        html.Hr(),
+        html.P([
+            "© 2024 Foresight | Developed by ",
+            html.A("GokulRaj S", href="mailto:gokulsenthil0906@gmail.com", target="_blank", className='text-primary'),
+            ". All rights reserved."
+        ], className='text-center')
+    ]), width=12))
+])
 
 def ml_model(dataset_path):
     # Initialize the model
