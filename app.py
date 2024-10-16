@@ -13,6 +13,7 @@ import pandas as pd
 
 # Initialize the Dash app
 app = Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP], title="Foresight")
+server = app.server
 
 dataset_path = "Stock_Market_Dataset.csv"
 
