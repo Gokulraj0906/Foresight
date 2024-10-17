@@ -67,7 +67,7 @@ app.layout = dbc.Container([
         html.Hr(),
         html.P([
             "© 2024 Foresight | Developed by ",
-            html.A("GokulRaj S", href="mailto:gokulsenthil0906@gmail.com", target="_blank", className='text-primary'),
+            html.A("GokulRaj S", href="https://www.linkedin.com/in/gokulraj0906/", target="_blank", className='text-primary'),
             ". All rights reserved."
         ], className='text-center')
     ]), width=12))
